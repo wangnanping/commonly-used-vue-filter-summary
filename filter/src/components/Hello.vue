@@ -1,53 +1,33 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+      <p>1.时间过滤器-->{{3456789 | timeYYMMDDhhmmss('YYYY/MM/DD hh:mm:ss')}}</p>
+      <P>2.换算单位 B K M G T-->{{1000000 | byteFormatter}}</P>
+      <p>3.判断返回值 yes or no-->{{true |  booleanFormatter("YES","NO")}}</p>
+      <p>4.总100所占得比列，取值为保留小数点位数，四舍五入-->{{0.1423 | percentageFormatter(2)}}</p>
   </div>
 </template>
 
 <script>
+import timeYYMMDDhhmmss from '../filters/timestampFormatter' //时间戳转换过滤器
+import byteFormatter from '../filters/byteFormatter'  //换算单位 B K M G T
+import booleanFormatter from '../filters/booleanFormatter' //判断true=>渲染yes or false=>渲染no 
+import percentageFormatter from '../filters/percentageFormatter' //参数为保留小数点位数 四舍五入 总1 占得比重 
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+     
     }
+  },
+  filters:{
+     timeYYMMDDhhmmss,
+     byteFormatter,
+     booleanFormatter,
+     percentageFormatter
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
