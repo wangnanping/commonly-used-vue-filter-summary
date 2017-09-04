@@ -85,7 +85,7 @@ export default {
         {
           name: '猪小明',
           Birthday: '2012/4/2',
-          address: '成都天府四街',
+          address: '成都天府四街1',
           Fruits: '菠萝',
           Star: '周星驰'
         }
