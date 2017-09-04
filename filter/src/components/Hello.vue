@@ -96,9 +96,31 @@ export default {
   computed: {
     newUsers: function() {
       let self = this;
-      return self.dataList.filter(function(data) {
-        return data.name.indexOf(self.searchValue) !== -1;
-      })
+      // if (self.searchValue) {
+        return self.dataList.filter(function(data) {
+          return data.Star.indexOf(self.searchValue) !== -1;
+          // switch (self.searchValue) {
+          //   case (data.name.indexOf(self.searchValue) !== -1):
+          //     return data
+          //     break
+          //   case (data.Birthday.indexOf(self.searchValue) !== -1):
+          //     return data
+          //     break
+          //   case (data.address.indexOf(self.searchValue) !== -1):
+          //     return data
+          //     break
+          //   case (data.Fruits.indexOf(self.searchValue) !== -1):
+          //     return data
+          //     break
+          //   case (data.Star.indexOf(self.searchValue) !== -1):
+          //     return data
+          //     break
+          // }
+        })
+      // } else {
+      //   return self.dataList
+      // }
+
     }
   },
   filters: {
