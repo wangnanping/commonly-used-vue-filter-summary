@@ -94,7 +94,7 @@ export default {
     }
   },
   computed: {
-    newUsers: function() {
+   newUsers: function() {
       let self = this;
       return self.dataList.filter(function(data) {
         if (data.Star.indexOf(self.searchValue) != -1) {
