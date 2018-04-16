@@ -30,6 +30,7 @@
           </tr>
         </tbody>
       </table>
+      <div class="search_no" v-if="searchStatus">未搜索到内容</div>
     </div>
   </div>
 </template>
@@ -37,8 +38,8 @@
 <script>
 import timeYYMMDDhhmmss from '../filters/timestampFormatter' //时间戳转换过滤器
 import byteFormatter from '../filters/byteFormatter'  //换算单位 B K M G T
-import booleanFormatter from '../filters/booleanFormatter' //判断true=>渲染yes or false=>渲染no 
-import percentageFormatter from '../filters/percentageFormatter' //参数为保留小数点位数 四舍五入 总1 占得比重 
+import booleanFormatter from '../filters/booleanFormatter' //判断true=>渲染yes or false=>渲染no
+import percentageFormatter from '../filters/percentageFormatter' //参数为保留小数点位数 四舍五入 总1 占得比重
 import digitalInterval from '../filters/digitalInterval' //数字添加逗号
 import decimalRetention from '../filters/decimalRetention' //自动添加小数点0.00 两位 不做向上向下取整
 // import conditions from '../filters/conditions'
@@ -90,28 +91,36 @@ export default {
           Star: '周星驰'
         }
       ],
-      searchValue: ''
+      searchValue: '',
+      searchStatus: false
     }
   },
   computed: {
    newUsers: function() {
       let self = this;
       return self.dataList.filter(function(data) {
-        if (data.Star.indexOf(self.searchValue) != -1) {
-          return data
+        if (data.Star.includes(self.searchValue)) {
+          self.searchStatus = false;
+          return data;
           return false;
-        } else if (data.name.indexOf(self.searchValue) != -1) {
-          return data
+        } else if (data.name.includes(self.searchValue)) {
+          self.searchStatus = false;
+          return data;
           return false;
-        } else if (data.Birthday.indexOf(self.searchValue) != -1) {
-          return data
+        } else if (data.Birthday.includes(self.searchValue)) {
+          self.searchStatus = false;
+          return data;
           return false;
-        } else if (data.address.indexOf(self.searchValue) != -1) {
-          return data
+        } else if (data.address.includes(self.searchValue)) {
+          self.searchStatus = false;
+          return data;
           return false;
-        } else if (data.Fruits.indexOf(self.searchValue) != -1) {
-          return data
+        } else if (data.Fruits.includes(self.searchValue)) {
+          self.searchStatus = false;
+          return data;
           return false;
+        }else {
+          self.searchStatus = true;
         }
 
       })
@@ -140,6 +149,7 @@ div {
 
 table {
   border: 1px solid #EEE;
+  width:500px;
 }
 
 table thead tr td {
@@ -149,4 +159,11 @@ table thead tr td {
 table tbody tr td {
   border: 1px solid #EEE;
 }
+  .search_no{
+    width:500px;
+    text-align: center;
+    height:100px;
+    line-height: 100px;
+    font-size:16px;
+  }
 </style>
