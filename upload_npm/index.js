@@ -1,5 +1,5 @@
-import moment from "moment";
-const vueFilters = {
+const moment = require("moment");
+const combination = {
   booleanFormatter: (boolean, trueText, falseText) => {
     let result;
     trueText = trueText || "Yes";
@@ -51,7 +51,7 @@ const vueFilters = {
     ;
     return `${ArrayVal[0]}.${Decimalpoint}`;
   },
-  digitalInterval: (value) => {  //数字添加逗号
+  digitalInterval: (value) => {
     let result;
     if (!/^(\+|-)?(\d+)(\.\d+)?$/.test(value)) {
       return value;
@@ -89,5 +89,7 @@ const vueFilters = {
     return result;
   }
 };
-module.exports = vueFilters;
+module.exports.vueFilters = () => {
+  combination;
+};
 

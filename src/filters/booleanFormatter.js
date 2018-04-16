@@ -11,4 +11,4 @@ module.exports = (boolean, trueText, falseText) => {  //判断返回yes or no
     }
 
     return result;
-  }
+  };

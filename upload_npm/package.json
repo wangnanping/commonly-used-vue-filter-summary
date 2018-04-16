@@ -7,6 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangnanping/commonly-used-vue-filter-summary/tree/master/upload_npm"
+  },
   "author": "wang nan ping <1341540464@qq.com>",
   "license": "ISC",
   "dependencies": {
