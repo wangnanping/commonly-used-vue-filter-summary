@@ -7,7 +7,7 @@
     <!--<p>5.数字添加逗号&ndash;&gt;{{12345678.124 | digitalInterval}}</p>-->
     <!--<p>6.没有自动添加小数点0.00 有一位小数添加 0.X0 两位 不做向上向下取整&ndash;&gt;{{1 | decimalRetention}}</p>-->
     <!--<p>7.组合 5 6 &ndash;&gt;{{123123.1231 | decimalRetention | digitalInterval}}</p>-->
-    <p>{{12345678.124 | digitalInterval}} 使用npm包 filters_wang</p>
+    <p>{{11111111 | digitalInterval}} 使用npm包 filters_wang</p>
     <p>{{3456789 | timestampFormatter('YYYY/MM/DD hh:mm:ss')}} 使用npm包 filters_wang</p>
     <div>
       8.输入搜索值，过滤参数值，如果是配合后台就应该传参在后台做数据处理返回显示，这里做的是本地的

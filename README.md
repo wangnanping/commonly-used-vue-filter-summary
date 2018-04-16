@@ -16,3 +16,21 @@
 
 > 搜索过滤表
 
+# filters_wang
+
+#### 安装
+
+```
+npm install filters_wang -s-d
+```
+
+#### 使用
+
+```
+import * as  vueFilters from "filters_wang"; // 全局使用
+Object.keys(vueFilters).forEach(key => { 
+  Vue.filter(key, vueFilters[key]);
+});
+直接使用过滤器
+如：{{11111111 | digitalInterval}} // 11,111,111
+```
