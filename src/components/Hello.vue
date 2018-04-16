@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
-    <p>1.时间过滤器-->{{3456789 | timeYYMMDDhhmmss('YYYY/MM/DD hh:mm:ss')}}</p>
-    <P>2.换算单位 B K M G T-->{{1000000 | byteFormatter}}</P>
-    <p>3.判断返回值 yes or no-->{{true | booleanFormatter("YES","NO")}}</p>
-    <p>4.总100所占得比列，取值为保留小数点位数，四舍五入-->{{0.1423 | percentageFormatter(2)}}</p>
-    <p>5.数字添加逗号-->{{12345678.124 | digitalInterval}}</p>
-    <p>6.没有自动添加小数点0.00 有一位小数添加 0.X0 两位 不做向上向下取整-->{{1 | decimalRetention}}</p>
-    <p>7.组合 5 6 -->{{123123.1231 | decimalRetention | digitalInterval}}</p>
+    <!--<p>1.时间过滤器&ndash;&gt;{{3456789 | timeYYMMDDhhmmss('YYYY/MM/DD hh:mm:ss')}}</p>-->
+    <!--<P>2.换算单位 B K M G T&ndash;&gt;{{1000000 | byteFormatter}}</P>-->
+    <!--<p>3.判断返回值 yes or no&ndash;&gt;{{true | booleanFormatter("YES","NO")}}</p>-->
+    <!--<p>4.总100所占得比列，取值为保留小数点位数，四舍五入&ndash;&gt;{{0.1423 | percentageFormatter(2)}}</p>-->
+    <!--<p>5.数字添加逗号&ndash;&gt;{{12345678.124 | digitalInterval}}</p>-->
+    <!--<p>6.没有自动添加小数点0.00 有一位小数添加 0.X0 两位 不做向上向下取整&ndash;&gt;{{1 | decimalRetention}}</p>-->
+    <!--<p>7.组合 5 6 &ndash;&gt;{{123123.1231 | decimalRetention | digitalInterval}}</p>-->
+    <p>{{12345678.124 | digitalInterval}} 使用npm包 filters_wang</p>
+    <p>{{3456789 | timestampFormatter('YYYY/MM/DD hh:mm:ss')}} 使用npm包 filters_wang</p>
     <div>
       8.输入搜索值，过滤参数值，如果是配合后台就应该传参在后台做数据处理返回显示，这里做的是本地的
       <input type="text" v-model="searchValue">
@@ -36,12 +38,12 @@
 </template>
 
 <script>
-import timeYYMMDDhhmmss from '../filters/timestampFormatter' //时间戳转换过滤器
-import byteFormatter from '../filters/byteFormatter'  //换算单位 B K M G T
-import booleanFormatter from '../filters/booleanFormatter' //判断true=>渲染yes or false=>渲染no
-import percentageFormatter from '../filters/percentageFormatter' //参数为保留小数点位数 四舍五入 总1 占得比重
-import digitalInterval from '../filters/digitalInterval' //数字添加逗号
-import decimalRetention from '../filters/decimalRetention' //自动添加小数点0.00 两位 不做向上向下取整
+//import timeYYMMDDhhmmss from '../filters/timestampFormatter' //时间戳转换过滤器
+//import byteFormatter from '../filters/byteFormatter'  //换算单位 B K M G T
+//import booleanFormatter from '../filters/booleanFormatter' //判断true=>渲染yes or false=>渲染no
+//import percentageFormatter from '../filters/percentageFormatter' //参数为保留小数点位数 四舍五入 总1 占得比重
+//import digitalInterval from '../filters/digitalInterval' //数字添加逗号
+//import decimalRetention from '../filters/decimalRetention' //自动添加小数点0.00 两位 不做向上向下取整
 // import conditions from '../filters/conditions'
 export default {
   name: 'hello',
@@ -127,12 +129,12 @@ export default {
     }
   },
   filters: {
-    timeYYMMDDhhmmss,
-    byteFormatter,
-    booleanFormatter,
-    percentageFormatter,
-    digitalInterval,
-    decimalRetention,
+//    timeYYMMDDhhmmss,
+//    byteFormatter,
+//    booleanFormatter,
+//    percentageFormatter,
+//    digitalInterval,
+//    decimalRetention,
     // conditions
   }
 }
