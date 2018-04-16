@@ -1,5 +1,5 @@
 const moment = require("moment");
-const combination = {
+const vueFilters = {
   booleanFormatter: (boolean, trueText, falseText) => {
     let result;
     trueText = trueText || "Yes";
@@ -89,7 +89,5 @@ const combination = {
     return result;
   }
 };
-module.exports.vueFilters = () => {
-  combination;
-};
+module.exports = vueFilters;
 
