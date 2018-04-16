@@ -14,6 +14,8 @@
 
 > 组合 5 6   {{123123.1231 | decimalRetention | digitalInterval}}
 
+>年月日 generateTime
+
 > 搜索过滤表
 
 # filters_wang  ->文件夹 upload_npm
