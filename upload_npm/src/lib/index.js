@@ -87,6 +87,13 @@ const vueFilters = {
       result = moment(timestamp).format("YYYY-MM-DD HH:mm:ss");
     }
     return result;
+  },
+  generateTime: (val) => {
+    if (!val) {
+      return val;
+    }
+    let d = new Date(val);
+    return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
   }
 };
 module.exports = vueFilters;

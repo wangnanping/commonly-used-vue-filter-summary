@@ -7,8 +7,8 @@
     <!--<p>5.数字添加逗号&ndash;&gt;{{12345678.124 | digitalInterval}}</p>-->
     <!--<p>6.没有自动添加小数点0.00 有一位小数添加 0.X0 两位 不做向上向下取整&ndash;&gt;{{1 | decimalRetention}}</p>-->
     <!--<p>7.组合 5 6 &ndash;&gt;{{123123.1231 | decimalRetention | digitalInterval}}</p>-->
-    <p>{{11111111 | digitalInterval}} 使用npm包 filters_wang</p>
-    <p>{{3456789 | timestampFormatter('YYYY/MM/DD hh:mm:ss')}} 使用npm包 filters_wang</p>
+    <!--<p>{{11111111 | digitalInterval}} 使用npm包 filters_wang</p>-->
+    <p>{{3456789 | timeYYMMDDhhmmss('YYYY/MM/DD hh:mm:ss')}} 使用npm包 filters_wang</p>
     <div>
       8.输入搜索值，过滤参数值，如果是配合后台就应该传参在后台做数据处理返回显示，这里做的是本地的
       <input type="text" v-model="searchValue">
@@ -45,6 +45,7 @@
 //import digitalInterval from '../filters/digitalInterval' //数字添加逗号
 //import decimalRetention from '../filters/decimalRetention' //自动添加小数点0.00 两位 不做向上向下取整
 // import conditions from '../filters/conditions'
+import * as  vueFilters from "../../upload_npm/dist/vue-filters_wang";
 export default {
   name: 'hello',
   data() {
@@ -97,6 +98,9 @@ export default {
       searchStatus: false
     }
   },
+  created(){
+     console.log(vueFilters);
+  },
   computed: {
    newUsers: function() {
       let self = this;
@@ -129,6 +133,7 @@ export default {
     }
   },
   filters: {
+    "timeYYMMDDhhmmss": vueFilters.timestampFormatter
 //    timeYYMMDDhhmmss,
 //    byteFormatter,
 //    booleanFormatter,
