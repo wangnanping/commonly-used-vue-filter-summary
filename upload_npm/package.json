@@ -1,6 +1,6 @@
 {
   "name": "filters-wang",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "vue filters",
   "main": "dist/vue-filters-wang.js",
   "private": false,
