@@ -30,9 +30,22 @@ npm install filters_wang -s-d
 
 ```
 import * as  vueFilters from "filters_wang"; // 全局使用
+
 Object.keys(vueFilters).forEach(key => { 
   Vue.filter(key, vueFilters[key]);
 });
+
+直接使用过滤器
+如：{{11111111 | digitalInterval}} // 11,111,111
+```
+
+```
+import * as  vueFilters from "路径/vue-filters-wang.js"  // 局部使用
+
+filters: {
+    "digitalInterval": vueFilters.digitalInterval
+}
+
 直接使用过滤器
 如：{{11111111 | digitalInterval}} // 11,111,111
 ```
