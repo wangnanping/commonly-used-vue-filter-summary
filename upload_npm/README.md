@@ -18,20 +18,20 @@
 
 > 搜索过滤表
 
-# filters_wang  ->文件夹 upload_npm
+# filters-wang  ->文件夹 upload_npm
 
 #### 安装
 
 ```
-npm install filters_wang -s-d
+npm install filters-wang -s-d
 ```
 
 #### 使用
 
 ```
-import * as  vueFilters from "filters_wang"; // 全局使用
+import * as  vueFilters from "filters-wang"; // 全局使用
 
-Object.keys(vueFilters).forEach(key => { 
+Object.keys(vueFilters).forEach(key => {
   Vue.filter(key, vueFilters[key]);
 });
 
