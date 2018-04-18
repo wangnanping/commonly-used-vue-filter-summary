@@ -1,10 +1,10 @@
 # filter 部分使用的过滤
 
-> 时间过滤器 timeYYMMDDhhmmss
+> 时间过滤器 timestampFormatter("YYYY-MM-DD HH:mm:ss") or timestampFormatter("YYYY-MM-DD") or timestampFormatter("HH:mm:ss") or timestampFormatter("hh:mm:ss")
 
 > 换算单位   byteFormatter
 
-> 判断返回值   booleanFormatter
+> 判断返回值   booleanFormatter yes OR no
 
 > 取值为保留小数点位数，四舍五入   percentageFormatter
 
