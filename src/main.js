@@ -6,6 +6,7 @@ import * as  vueFilters from "filters-wang";
 
 Vue.config.productionTip = false
 
+// Vue.filter('phonexxx', phonexxx);
 Object.keys(vueFilters).forEach(key => {
   Vue.filter(key, vueFilters[key]);
 });
